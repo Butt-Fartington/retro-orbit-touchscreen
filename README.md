@@ -1,8 +1,8 @@
 # Retro Orbit Touchscreen
 
-Current version: **1.2.16-touch** (code 43), minimum API 26, target API 35. Tested on Samsung SM-S916U running Android 16.
+Current version: **1.2.18-touch** (code 45), minimum API 26, target API 35. Tested on Samsung SM-S916U running Android 16.
 
-A millennium-inspired touchscreen launcher: chrome/glass app icons, orbit wheel, Rajdhani typography, weather, app-grouped notification previews and pages, continuous scrolling, and momentum. Tap to open, hold for options. Swipe notification groups right to dismiss clearable alerts; left for options. Home has Apps/Options; content screens omit the Open button. Full controls are in Options → Help.
+A millennium-inspired touchscreen launcher: chrome/glass app icons, orbit wheel, Rajdhani typography, weather, app-grouped notification previews and pages, continuous scrolling, and momentum. Tap to open, hold for options. Swipe notification groups right to dismiss clearable alerts; left for options. Home has Apps/Options; content screens omit the Open button. The app drawer includes an A–Z drag rail with a letter indicator. A floating search orb below the wheel opens the Google app Home page (with search/browser fallbacks). Full controls are in Options → Help.
 
 Optional Orbit Access is a visual transition after Android unlocks while the launcher is visible; it does not replace secure authentication. The separate preview uses Android biometric/device credentials. The original Neon Earthrise wallpaper is embedded at `assets/wallpapers/neon_earthrise.png`; Options → Lock-screen wallpaper can apply it.
 
