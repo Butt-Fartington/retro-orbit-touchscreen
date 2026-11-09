@@ -9,18 +9,27 @@ final class MillenniumIcons {
  case "com.google.android.apps.maps":case "com.waze":case "net.osmand.plus":return "maps";
  case "com.termux":case "com.termux.x11":case "com.ddm.qute":return "terminal";
  case "com.sec.android.app.myfiles":case "com.google.android.documentsui":case "com.google.android.apps.nbu.files":return "files";
- case "com.microsoft.office.outlook":case "com.google.android.gm":return "mail";
- case "com.discord":case "org.telegram.messenger":case "org.thoughtcrime.securesms":case "com.facebook.orca":return "chat";
+ case "com.microsoft.office.outlook":return "outlook";case "com.google.android.gm":return "gmail";case "com.samsung.android.email.provider":return "samsungmail";case "com.whatsapp":return "whatsapp";case "com.google.android.apps.messaging":return "googlemessages";case "com.samsung.android.messaging":return "samsungmessages";
+ case "com.discord":return "discord";case "org.telegram.messenger":return "telegram";case "org.thoughtcrime.securesms":return "signal";case "com.facebook.orca":case "com.facebook.mlite":return "messenger";
  case "com.amazon.mshop.android.shopping":case "com.ebay.mobile":case "com.walmart.android":case "com.target.ui":return "shopping";
  case "com.google.android.keep":case "com.samsung.android.app.notes":case "com.microsoft.office.onenote":return "notes";
  default:return null;}}
- static int tint(String name){switch(name){case "reddit":return 0xffff8043;case "ai":return 0xff6de0b5;case "spotify":return 0xff63e88d;case "video":return 0xffff6584;case "maps":return 0xff62dfbe;case "terminal":return 0xff8fe96c;case "files":case "notes":return 0xffffcf65;case "chat":return 0xffb79aff;case "shopping":return 0xffffb469;default:return 0xff47a8df;}}
+ static int tint(String name){switch(name){case "gmail":return 0xffed665b;case "outlook":return 0xff328aff;case "samsungmail":return 0xffff7f64;case "whatsapp":return 0xff58e796;case "telegram":return 0xff50cafa;case "discord":return 0xff9181ff;case "signal":return 0xff619fff;case "messenger":return 0xffd57cff;case "googlemessages":return 0xff56aaff;case "samsungmessages":return 0xff6bd5ff;case "reddit":return 0xffff8043;case "ai":return 0xff6de0b5;case "spotify":return 0xff63e88d;case "video":return 0xffff6584;case "maps":return 0xff62dfbe;case "terminal":return 0xff8fe96c;case "files":case "notes":return 0xffffcf65;case "chat":return 0xffb79aff;case "shopping":return 0xffffb469;default:return 0xff47a8df;}}
  static void draw(Canvas canvas,String name,float x,float y,float radius){
  Canvas c=canvas; c.save();c.translate(x,y);c.scale(radius/12,radius/12);
  Paint p=new Paint(Paint.ANTI_ALIAS_FLAG);p.setStrokeWidth(1.8f);p.setStrokeCap(Paint.Cap.ROUND);p.setStrokeJoin(Paint.Join.ROUND);p.setStyle(Paint.Style.STROKE);
  p.setShader(new LinearGradient(0,-10,0,10,new int[]{0xffffffff,0xffb6eeff,tint(name),0xffe2faff},null,Shader.TileMode.CLAMP));
  Path path=new Path();
- if(name.equals("clock")){c.drawCircle(0,0,10,p);c.drawLine(0,0,0,-6,p);c.drawLine(0,0,5,3,p);}
+ if(name.equals("gmail")){path.moveTo(-10,8);path.lineTo(-10,-7);path.lineTo(0,1);path.lineTo(10,-7);path.lineTo(10,8);c.drawPath(path,p);c.drawLine(-7,8,-7,-1,p);c.drawLine(7,8,7,-1,p);}
+ else if(name.equals("outlook")){c.drawRoundRect(-4,-8,11,8,1,1,p);path.moveTo(-3,-6);path.lineTo(4,0);path.lineTo(10,-6);c.drawPath(path,p);p.setStyle(Paint.Style.FILL);c.drawRoundRect(-12,-6,1,7,1,1,p);p.setStyle(Paint.Style.STROKE);p.setShader(null);p.setColor(Color.WHITE);c.drawOval(-9,-3,-3,4,p);}
+ else if(name.equals("telegram")){path.moveTo(-11,-1);path.lineTo(11,-9);path.lineTo(7,10);path.lineTo(0,4);path.lineTo(-4,8);path.lineTo(-3,1);path.lineTo(6,-5);path.lineTo(-5,2);path.close();c.drawPath(path,p);}
+ else if(name.equals("discord")){path.moveTo(-9,-6);path.quadTo(0,-11,9,-6);path.lineTo(12,6);path.quadTo(7,10,4,7);path.lineTo(-4,7);path.quadTo(-9,10,-12,6);path.close();c.drawPath(path,p);c.drawOval(-6,-1,-3,3,p);c.drawOval(3,-1,6,3,p);}
+ else if(name.equals("messenger")){c.drawOval(-11,-9,11,8,p);path.moveTo(-8,10);path.lineTo(-7,5);path.moveTo(-7,3);path.lineTo(-1,-3);path.lineTo(2,0);path.lineTo(7,-3);path.lineTo(1,4);path.lineTo(-2,1);path.close();c.drawPath(path,p);}
+ else if(name.equals("whatsapp")){c.drawCircle(0,0,10,p);path.moveTo(-9,5);path.lineTo(-11,11);path.lineTo(-4,9);path.moveTo(-4,-5);path.cubicTo(-7,0,0,7,5,3);path.lineTo(2,1);path.lineTo(0,3);path.lineTo(-3,-1);path.lineTo(-2,-3);path.close();c.drawPath(path,p);}
+ else if(name.equals("signal")){p.setPathEffect(new DashPathEffect(new float[]{2,2},0));c.drawCircle(0,0,10,p);p.setPathEffect(null);c.drawRoundRect(-6,-5,6,4,3,3,p);c.drawLine(-4,4,-5,7,p);}
+ else if(name.equals("googlemessages")||name.equals("samsungmessages")){c.drawRoundRect(-10,-8,10,6,4,4,p);c.drawLine(-6,6,-8,10,p);if(name.equals("googlemessages")){c.drawLine(-5,-2,5,-2,p);c.drawLine(-5,2,2,2,p);}else for(int i=-1;i<=1;i++)c.drawCircle(i*5,-1,1,p);}
+ else if(name.equals("samsungmail")){c.drawRoundRect(-11,-7,11,8,2,2,p);path.moveTo(-10,-5);path.lineTo(0,2);path.lineTo(10,-5);c.drawPath(path,p);p.setStyle(Paint.Style.FILL);c.drawCircle(8,-7,3,p);}
+ else if(name.equals("clock")){c.drawCircle(0,0,10,p);c.drawLine(0,0,0,-6,p);c.drawLine(0,0,5,3,p);}
  else if(name.equals("reddit")){c.drawOval(-10,-5,10,8,p);c.drawCircle(-5,0,1,p);c.drawCircle(5,0,1,p);c.drawArc(-5,-1,5,5,15,150,false,p);path.moveTo(0,-5);path.lineTo(2,-10);path.lineTo(7,-9);c.drawPath(path,p);c.drawCircle(9,-8,2,p);}
  else if(name.equals("ai")){for(int i=0;i<6;i++){c.save();c.rotate(i*60);c.drawRoundRect(-3,-10,5,3,4,4,p);c.restore();}c.drawCircle(0,0,2,p);}
  else if(name.equals("spotify")){c.drawCircle(0,0,10,p);for(int i=0;i<3;i++)c.drawArc(-7+i,-6+i*4,7-i,2+i*4,205,130,false,p);}

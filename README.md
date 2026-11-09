@@ -1,8 +1,8 @@
 # Retro Orbit Touchscreen
 
-Current version: **1.2.18-touch** (code 45), minimum API 26, target API 35. Tested on Samsung SM-S916U running Android 16.
+Current version: **1.2.23-touch** (code 50), minimum API 26, target API 35. Tested on Samsung SM-S916U running Android 16.
 
-A millennium-inspired touchscreen launcher: chrome/glass app icons, orbit wheel, Rajdhani typography, weather, app-grouped notification previews and pages, continuous scrolling, and momentum. Tap to open, hold for options. Swipe notification groups right to dismiss clearable alerts; left for options. Home has Apps/Options; content screens omit the Open button. The app drawer includes an A–Z drag rail with a letter indicator. A floating search orb below the wheel opens the Google app Home page (with search/browser fallbacks). Full controls are in Options → Help.
+A millennium-inspired touchscreen launcher: chrome/glass app icons, orbit wheel, Rajdhani typography, weather, app-grouped notification previews and pages, continuous scrolling, and momentum. Tap to open, hold for options. Swipe notification groups right to dismiss clearable alerts; left for options. Home has Apps/Options; content screens omit the Open button. A Recently used row retains the last three successful launches through Retro Orbit (no usage-access permission). The app drawer includes an A–Z drag rail with a letter indicator. A floating search orb below the wheel opens the Google app Home page (with search/browser fallbacks). Full controls are in Options → Help.
 
 Optional Orbit Access is a visual transition after Android unlocks while the launcher is visible; it does not replace secure authentication. The separate preview uses Android biometric/device credentials. The original Neon Earthrise wallpaper is embedded at `assets/wallpapers/neon_earthrise.png`; Options → Lock-screen wallpaper can apply it.
 
@@ -23,3 +23,11 @@ Both versions currently use `com.retro.launcher` and the same signing identity. 
 Includes the user-supplied Chrome Blue artwork and generated orb graphics. Public redistribution rights for supplied artwork have not been established; no blanket open-source license is granted. Rajdhani font has its included SIL Open Font License in `assets/fonts/OFL.txt`.
 
 `docs/DEVELOPMENT_HISTORY.md` and `VALIDATION.md` contain historical notes; they are not a claim that every old behavior remains current.
+
+Cellular status follows the default data SIM and Android signal/display callbacks. Options → Cellular status requests optional READ_PHONE_STATE permission. 5G/5G+ labels use carrier display overrides; they describe Android’s network branding rather than measured throughput. No call-log or phone-number permission is requested.
+
+## App search and communication icons (1.2.23)
+
+The Applications screen has a native search field that filters app names, ignoring case. Clear it to restore Recently used and the full alphabetical list. Result taps and long-press options refer to the original installed app. No-result state exposes no unrelated app actions. Distinct metallic symbols and colors identify Gmail, Outlook, Samsung Email, WhatsApp, Telegram, Signal, Discord, Messenger, Google Messages and Samsung Messages. Explicit per-app icon overrides still take priority.
+
+Validation: signed build passed; Android 16 emulator search filtering, result launch into Clock, and empty results were checked. Physical Samsung validation of this revision is pending.
