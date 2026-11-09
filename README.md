@@ -1,6 +1,6 @@
 # Retro Orbit Touchscreen
 
-Current version: **1.2.25-touch** (code 52), minimum API 26, target API 35. Tested on Samsung SM-S916U running Android 16.
+Current version: **1.2.26-touch** (code 53), minimum API 26, target API 35. Tested on Samsung SM-S916U running Android 16.
 
 A millennium-inspired touchscreen launcher: chrome/glass app icons, orbit wheel, Rajdhani typography, weather, app-grouped notification previews and pages, continuous scrolling, and momentum. Tap to open, hold for options. Swipe notification groups right to dismiss clearable alerts; left for options. Home has Apps/Options; content screens omit the Open button. A Recently used row retains the last three successful launches through Retro Orbit (no usage-access permission). The app drawer includes an A–Z drag rail with a letter indicator. A floating search orb below the wheel opens the Google app Home page (with search/browser fallbacks). Full controls are in Options → Help.
 
@@ -37,3 +37,5 @@ In 1.2.24, app search sits below the Applications header and above Recently used
 ## Glass oval controls (1.2.25)
 
 Footer controls and page headings now share thin chrome-outline elliptical glass styling, with Michroma lettering. Native footer controls retain 56dp touch height despite slimmer visible artwork. Michroma is included under its SIL Open Font License at assets/fonts/MICHROMA-OFL.txt; source https://github.com/google/fonts/tree/main/ofl/michroma . Physical Samsung home, app and settings layouts were inspected after installation.
+
+Cobalt Glass Orbit is a bundled generated wallpaper, selectable under Options → Wallpaper. It is the default on new installs and is selected once when this wallpaper update first runs; later wallpaper choices are preserved. The home background overlay is lighter for this wallpaper to retain its glass and horizon details. Other wallpapers remain available.
